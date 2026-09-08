@@ -17,7 +17,7 @@ import time
 
 # 画面の設定
 st.set_page_config(page_title="YouTube 日米コメント感情・モデル比較ダッシュボード", layout="wide")
-st.title("📊 YouTube 日英コメント 感情・モデル比較ダッシュボード")
+st.title("YouTube 日英コメント 感情・モデル比較ダッシュボード")
 
 # 履歴保存ディレクトリ
 HISTORY_DIR = "analysis_history"
@@ -425,7 +425,7 @@ if not st.session_state.df_en.empty or not st.session_state.df_ja.empty:
     
     st.markdown("---")
     
-    tab1, tab2 = st.tabs(["🌐 日米感情分析・世論比較", "🔬 BERT vs Gemini 判定差分ビューア"])
+    tab1, tab2 = st.tabs(["🌐 日英感情分析・世論比較", "🔬 BERT vs Gemini 判定差分ビューア"])
     
     color_map = {
         "Positive (肯定的)": "#2b83ba",
@@ -441,7 +441,7 @@ if not st.session_state.df_en.empty or not st.session_state.df_ja.empty:
         
         # 🇺🇸 英語
         with col1:
-            st.header("🇺🇸 英語コメント分析 (Gemini推論)")
+            st.header("英語コメント分析 (Gemini推論)")
             if not df_en.empty:
                 avg_en = df_en["gemini_sentiment"].mean()
                 weighted_en = calculate_weighted_sentiment(df_en["gemini_sentiment"], df_en["likes"])
@@ -501,7 +501,7 @@ if not st.session_state.df_en.empty or not st.session_state.df_ja.empty:
 
         # 🇯🇵 日本語
         with col2:
-            st.header("🇯🇵 日本語コメント分析 (Gemini推論)")
+            st.header("日本語コメント分析 (Gemini推論)")
             if not df_ja.empty:
                 avg_ja = df_ja["gemini_sentiment"].mean()
                 weighted_ja = calculate_weighted_sentiment(df_ja["gemini_sentiment"], df_ja["likes"])
