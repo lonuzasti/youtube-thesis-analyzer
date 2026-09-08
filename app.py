@@ -441,7 +441,7 @@ if not st.session_state.df_en.empty or not st.session_state.df_ja.empty:
         
         # 🇺🇸 英語
         with col1:
-            st.header("英語コメント分析 (Gemini推論)")
+            st.header("EN 英語コメント分析 (Gemini推論)")
             if not df_en.empty:
                 avg_en = df_en["gemini_sentiment"].mean()
                 weighted_en = calculate_weighted_sentiment(df_en["gemini_sentiment"], df_en["likes"])
@@ -501,7 +501,7 @@ if not st.session_state.df_en.empty or not st.session_state.df_ja.empty:
 
         # 🇯🇵 日本語
         with col2:
-            st.header("日本語コメント分析 (Gemini推論)")
+            st.header("JP 日本語コメント分析 (Gemini推論)")
             if not df_ja.empty:
                 avg_ja = df_ja["gemini_sentiment"].mean()
                 weighted_ja = calculate_weighted_sentiment(df_ja["gemini_sentiment"], df_ja["likes"])
